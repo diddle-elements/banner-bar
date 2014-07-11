@@ -6,6 +6,9 @@
   ],
   "main": "banner.html",
   "license": "MIT",
+  "keywords": [
+    "web-components"
+  ],
   "ignore": [
     "**/.*",
     "node_modules",
