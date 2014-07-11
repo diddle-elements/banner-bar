@@ -1,0 +1,15 @@
+<link rel="import" href="../polymer/polymer.html" />
+
+<link rel="import" href="../clear/clear.html" />
+
+<polymer-element name="banner-bar" noscript attributes="url image alt height bgcolor maxWidth">
+	<template bind="{{ bar }}">
+		<link rel="stylesheet" href="stylesheets/clear.css" />
+		<div class="banner">
+			<div class="canvas" style="background: {{ bgcolor }}; max-width: {{ maxWidth }}; height: {{ height }}">
+				<a href="{{ url }}" target="_blank"><img src="{{ image }}" alt="{{ alt }}" title="{{ alt }}" style="height: {{ height }}"></a>
+			</div>
+			<clear-both></clear-both>
+		</div>
+	</template>
+</polymer-element>

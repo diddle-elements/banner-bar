@@ -1,0 +1,19 @@
+{
+  "name": "banner_component",
+  "version": "0.0.0",
+  "authors": [
+    "Daniel Llewellyn <daniel@bowlhat.net>"
+  ],
+  "main": "banner.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "clear": "*"
+  }
+}

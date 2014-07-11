@@ -1,0 +1,20 @@
+/* line 3, ../sass/clear.scss */
+.banner {
+  width: 100%;
+  text-align: right;
+  z-index: 500;
+  position: relative;
+  -webkit-box-shadow: 0px 3px 3px rgba(50, 50, 50, 0.3);
+  -moz-box-shadow: 0px 3px 3px rgba(50, 50, 50, 0.3);
+  box-shadow: 0px 3px 3px rgba(50, 50, 50, 0.3);
+}
+/* line 9, ../sass/clear.scss */
+.banner .canvas {
+  width: 100%;
+  margin: 0 auto;
+}
+/* line 13, ../sass/clear.scss */
+.banner img {
+  padding: 0;
+  margin: 0;
+}
