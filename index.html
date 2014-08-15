@@ -22,12 +22,12 @@
 	<link rel="import" href="../warpech-prism/warpech-prism.html" />
 </head>
 <body unresolved>
-	<banner-bar url="#"
-				image="example_logo.jpg"
-				alt="Bowl Hat"
+	<banner-bar	align="right"
 				bgcolor="#fff"
 				height="50px"
-				maxWidth="960px"></banner-bar>
+				maxWidth="960px">
+		<img src="example_logo.jpg" alt="example logo" />
+	</banner-bar>
 
 	<github-ribbon user="diddledan" repo="banner-bar" color="red" position="left"></github-ribbon>
 
@@ -41,19 +41,17 @@
 		&lt;link rel="import" href="path/to/banner.hmtl" /&gt;
 	&lt;/head&gt;
 	&lt;body&gt;
-&lt;banner-bar url="http://example-url-for-anchor-tag/"
-	image="http://url-to/image.png"
-	alt="image alternative and title text"
+&lt;banner-bar
+	align="right"
 	bgcolor="#fff"
 	height="50px"
 	maxWidth="960px"&gt;
+	&lt;img src="example_logo.jpg" alt="example logo" /&gt;
 &lt;/banner-bar&gt;
 	&lt;/body&gt;
 &lt;/html&gt;</warpech-prism>
 		<dl>
-			<dt>url</dt><dd>Destination for an anchor tag surrounding the img tag.</dd>
-			<dt>image</dt><dd>URL for the src attribute of the img tag</dd>
-			<dt>alt</dt><dd>Alternative text for the image. Also used in the title attribute</dd>
+			<dt>align</dt><dd>Text alignment: left, center or right.</dd>
 			<dt>bgcolor</dt><dd>Background colour of the banner bar</dd>
 			<dt>height</dt><dd>height of the image which also specifies the height of the banner bar. If the image is smaller than this height it will be scaled.</dd>
 			<dt>maxWidth</dt><dd>The banner bar is responsive. This attribute specifies a "page width" whereby the image will right-aligned in a box the width specified here which will be centered in the page. Use "100%" to not use this feature.</dd>

@@ -8,12 +8,17 @@ Banner bar
 <link rel="import" href="../polymer/polymer.html" />
 <link rel="import" href="../clear/clear.html" />
 
-<polymer-element name="banner-bar" noscript attributes="url image alt height bgcolor maxWidth">
+<polymer-element name="banner-bar" noscript attributes="align height bgcolor maxWidth">
 	<template bind="{{ bar }}">
+		<style>
+			.canvas {
+				text-align: right;
+			}
+		</style>
 		<link rel="stylesheet" href="stylesheets/clear.css" />
 		<div class="banner" style="background: {{ bgcolor }};">
-			<div class="canvas" style="max-width: {{ maxWidth }}; height: {{ height }};">
-				<a href="{{ url }}" target="_blank"><img src="{{ image }}" alt="{{ alt }}" title="{{ alt }}" style="height: {{ height }}"></a>
+			<div class="canvas" style="max-width: {{ maxWidth }}; height: {{ height }}; text-align: {{align}}">
+				<content></content>
 			</div>
 			<clear-both></clear-both>
 		</div>
