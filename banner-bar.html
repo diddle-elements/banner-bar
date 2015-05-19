@@ -1,0 +1,114 @@
+<!--
+@element banner-bar
+@demo https://diddledan.github.io/banner-bar/demo
+@license
+The MIT License (MIT)
+
+Copyright (c) 2015 Daniel Llewellyn
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+
+<link rel="import" href="../polymer/polymer.html" />
+<link rel="import" href="../clear/clear.html" />
+
+<dom-module id="banner-bar">
+	<link rel="import" type="css" href="stylesheets/clear.css" />
+	<style>
+		.banner {
+			background: var(--background);
+		}
+	</style>
+	<template>
+		<div class="banner horizontal layout center" style$="{{_computeBgStyle(background)}}">
+			<div class="canvas" style$="[[_computeCanvasStyle(align, height, maxwidth)]]">
+				<content></content>
+			</div>
+			<clear-both></clear-both>
+		</div>
+	</template>
+</dom-module>
+<script>
+	/**
+	 * The Banner Bar component provides a banner area which can embed arbitrary content.
+	 * It was built primarily for hosting a corporate logo at the top of all sites under
+	 * a particular brand.
+	 *
+	 * Example:
+	 *
+	 * ```html
+	 * <banner-bar background="#ffffff" align="right" height="60px" maxwidth="100%">
+	 *     <img src="demo/example_logo.jpg" alt="Example logo"
+	 *          title="Example logo used to demonstrate the banner-bar component" />
+	 * </banner-bar>```
+	 */
+	Polymer({
+		is: "banner-bar",
+		properties: {
+			/**
+			 * Sets the alignment. Accepts either right, left or center.
+			 */
+			align: {
+				type: String,
+				value: 'right'
+			},
+			/**
+			 * Defines the height of the bar. Any valid CSS height values are accepted.
+			 */
+			height: {
+				type: String,
+				value: '30px'
+			},
+			/**
+			 * Limits the maximum width of the inner contents (not the banner itself). Can be any acceptable CSS max-width value.
+			 */
+			maxwidth: {
+				type: String,
+				value: '100%'
+			},
+			/**
+			 * Defines the bar's background styling. Can be any value suitable for a CSS background property, ideally a colour value.
+			 */
+			background: {
+				type: String,
+				value: '#ffffff'
+			}
+		},
+		/**
+		 * Returns a CSS background property based on the value passed into the component.
+		 *
+		 * @param {string} background the background definition
+		 * @return {string} the input formatted as a background css property
+		 */
+		_computeBgStyle: function(background) {
+			return 'background: ' + background + ';';
+		},
+		/**
+		 * Returns CSS properties string for the maximum width, height and alignment based on the values passed into the component.
+		 *
+		 * @param {string} align the alignment definition - should be either `left`, `center` or `right`
+		 * @param {string} height the height defition.
+		 * @param {string} maxwidth the maximum width for the content of the banner. (not the banner itself)
+		 * @return {string} a combination of the input values formatted as css properties.
+		 */
+		_computeCanvasStyle: function(align, height, maxwidth) {
+			return 'max-width: '+ maxwidth + '; height: ' + height +'; text-align: ' + align + ';';
+		}
+	})
+</script>
